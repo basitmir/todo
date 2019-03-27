@@ -22,6 +22,11 @@ $('#getTaskData').submit(function(event){
          },
          success:function(data){
              alert(data);
+            
+         },
+         error:function(){
+          alert('Something went Wrong');
+
          },
      });
  });//submit close
