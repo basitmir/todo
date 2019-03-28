@@ -14,7 +14,7 @@ require "config.php";
                         echo json_encode($result);
                     } catch (PDOException $error) {
                         echo $sql. "<br>". $error->getMessage();
-                    }
+                    } 
                    }break;
  case 'save':{
                 try {
