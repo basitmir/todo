@@ -35,7 +35,37 @@ require "config.php";
                 }
            }break;
 
+   case 'delete':{
+    try {
+        $connection=new PDO($dsn, $username, $password, $options);
+        $sql="DELETE from test where id=:id";
+        $statment=$connection->prepare($sql);
+        $statment->bindParam(":id",$_POST['id'], PDO::PARAM_STR);
+        $statment->execute();
+        $message="Task deleted Successfully";
+        echo json_encode($message);
+    } catch (PDOException $error) {
+        echo "in the error";
+        echo $sql. "<br>". $error->getMessage();
+    }
+   }break;
 
+   case 'current':{
+    try {
+        $connection=new PDO($dsn, $username, $password, $options);
+        $sql="SELECT * from test where id=:id";
+        $statment=$connection->prepare($sql);
+        $statment->bindParam(":id",$_GET['id'], PDO::PARAM_STR);
+        $statment->execute();
+        $result=$statment->fetchAll();
+        echo json_encode($result);
+    } catch (PDOException $error) {
+        echo "in the error";
+        echo $sql. "<br>". $error->getMessage();
+    }
+   }break;
+
+   
 } //switch close
 
   
