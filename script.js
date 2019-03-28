@@ -25,13 +25,17 @@ $(document).on('click','.btnclk',function(){
 
 //update data
 $(document).on('dblclick','#modal',function(){
-    
     $('#exampleModalCenter').modal('show');
- 
   var id= $(this).children('.btn').attr('id');
-      updateTask(id);
-          });//update close
+    $('.modal-footer').attr('id',id);
+      singleTask(id);
+          });//show close
 
+          //update task
+$(document).on('click','#updateTask',function(){
+  var id= $(this).parent('.modal-footer').attr('id');
+  updateTask(id);
+});//close function
         })
 
 function showData(){
@@ -150,7 +154,7 @@ function saveTask(){
 });
 }
 
-function updateTask(id){
+function singleTask(id){
   
   $.ajax({
     url:'save.php?action=current',
@@ -158,14 +162,39 @@ function updateTask(id){
     dataType:'JSON',
     data:{id:id},
     success:function(data){
-      console.log(data);
-      $('#updateTask').val(data[0].task);
-      $('input[name=radio][value="'+data[0].position+'"]').prop("checked",true);
+      // console.log(data);
+      $('#updateTaskData').val(data[0].task);
+      $('input[name=updateradio][value="'+data[0].position+'"]').prop("checked",true);
       $('#datepicker1').val(data[0].dueTask);
-      console.log('success');
+      // console.log('success');
     },
     error:function(){
-      console.log('error');
+      // console.log('error');
     },
+});
+}
+
+function updateTask(id){
+
+  $.ajax({
+    url: 'save.php?action=update',
+    type: 'POST',
+    dataType: 'JSON',
+    data:{
+    id:id,
+    task: $('#updateTaskData').val(),
+    position: $("input[name='updateradio']:checked").val(),
+    date: $('#datepicker1').val(),
+},
+success:function(data){
+    alert(data);
+    showData();
+    
+},
+error:function(){
+ alert('Something went Wrong');
+ 
+
+},
 });
 }

@@ -7,7 +7,7 @@ require "config.php";
                     try {
                         //read
                         $connection=new PDO($dsn, $username, $password, $options);
-                        $sql= "SELECT * from test";
+                        $sql= "SELECT * from test ORDER BY dueTask DESC";
                         $statment=$connection->prepare($sql);
                         $statment->execute();
                         $result=$statment->fetchAll();
@@ -65,6 +65,25 @@ require "config.php";
     }
    }break;
 
+   case 'update':{
+    try {
+        $edate=strtotime($_POST['date']); 
+        $edate=date("Y-m-d",$edate);
+        $connection=new PDO($dsn, $username, $password, $options);
+        $sql="UPDATE test set task=:task,position=:position,dueTask=:dueTask where id=:id";
+        $statment=$connection->prepare($sql);
+        $statment->bindParam(":task", $_POST['task'], PDO::PARAM_STR);
+        $statment->bindParam(":position", $_POST['position'], PDO::PARAM_STR);
+        $statment->bindParam(":dueTask", $edate, PDO::PARAM_STR);
+        $statment->bindParam(":id", $_POST['id'], PDO::PARAM_STR);
+        $statment->execute();
+        $message="Task Updated Successfully";
+        echo json_encode($message);
+    } catch (PDOException $error) {
+        echo "in the error";
+        echo $sql. "<br>". $error->getMessage();
+    }
+}break;
    
 } //switch close
 
