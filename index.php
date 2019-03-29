@@ -89,9 +89,9 @@
           <form class="text-center" method="post" action="save.php" id="getTaskData">
                   <div class="container">
                     <div class="form-row align-items-center">
-                      <div class="col-4"></div>
-                                  <div class="col-4">
-                                          <div class="input-group mb-2">
+                      <div class="col-lg-4 col-sm-3"></div>
+                                  <div class="col-lg-4 col-sm-6">
+                                          <div class="input-group mb-2 ">
                                               <div class="input-group-prepend">
                                               <div class="input-group-text">TASK</div>
                                               </div>
@@ -146,9 +146,9 @@
 
 <div class="container-fluid">
      <div class="row overflow">
-          <div id="first" class="col">
-                <div class="card bg-secondary border-0 " style="width: 38rem;">
-                      <div class="card-body ">
+          <div id="first" class="col-lg-6 col-sm-6 sol-xs-12 ">
+                <div class="card bg-secondary border-0">
+                      <div class="card-body">
                           <h5 class="card-title text-center">TASK 1</h5>
                       </div>
                       <ul class="list-group list-group-flush" id="task1" data-toggle="tooltip" title="Double click to update">
@@ -165,8 +165,8 @@
           </div>
 
 
-          <div id="second" class="col ">
-                      <div class="card bg-secondary border-0" style="width: 38rem;">
+          <div id="second" class="col-lg-6 col-sm-6 sol-xs-12">
+                      <div class="card bg-secondary border-0 ">
                           <div class="card-body">
                               <h5 class="card-title text-center">TASK 2</h5>
                           </div>
@@ -180,8 +180,8 @@
           <div class="w-100"></div><hr>
 
 
-          <div id="third" class="col ">
-                      <div class="card bg-secondary border-0" style="width: 38rem;">
+          <div id="third" class="col-lg-6 col-sm-6 sol-xs-12">
+                      <div class="card bg-secondary border-0">
                           <div class="card-body ">
                               <h5 class="card-title text-center">TASK 3</h5>
                           </div>
@@ -191,8 +191,8 @@
           </div>
 
 
-          <div id="fourth" class="col ">
-                <div class="card bg-secondary border-0" style="width: 38rem;">
+          <div id="fourth" class="col-lg-6 col-sm-6 sol-xs-12">
+                <div class="card bg-secondary border-0">
                       <div class="card-body ">
                           <h5 class="card-title text-center">TASK 4</h5>
                       </div>
