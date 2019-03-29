@@ -27,7 +27,7 @@ require "config.php";
                     $statment->bindParam(":position", $_POST['radio'], PDO::PARAM_STR);
                     $statment->bindParam(":dueTask", $edate, PDO::PARAM_STR);
                     $statment->execute();
-                    $message="Task Added Successfully";
+                    $message=$_POST['task'];
                     echo json_encode($message);
                 } catch (PDOException $error) {
                     echo "in the error";
@@ -77,7 +77,7 @@ require "config.php";
         $statment->bindParam(":dueTask", $edate, PDO::PARAM_STR);
         $statment->bindParam(":id", $_POST['id'], PDO::PARAM_STR);
         $statment->execute();
-        $message="Task Updated Successfully";
+        $message=  $_POST['task'];
         echo json_encode($message);
     } catch (PDOException $error) {
         echo "in the error";

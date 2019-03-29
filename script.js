@@ -8,7 +8,9 @@ $(function() {
 
 
 //ajax calls
-$(document).ready(function(){  
+$(document).ready(function(){ 
+  $('[data-toggle="tooltip"]').tooltip(); 
+    
 showData();
 
 
@@ -20,7 +22,20 @@ $('#getTaskData').submit(function(event){
 
 //delete task
 $(document).on('click','.btnclk',function(){
-      deleteTask();
+  var id =$(this).attr('id');
+  swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to retrieve TASK!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willDelete) => {
+    if (willDelete) {
+               deleteTask(id);
+    } 
+  });
+      
   });//close function
 
 //update data
@@ -109,21 +124,24 @@ function showData(){
 }
 
 
-function deleteTask(){
-  var id =$(this).attr('id');
-                      
+function deleteTask(id){                   
   $.ajax({
     url:'save.php?action=delete',
     type:'POST',
     dataType:'JSON',
     data:{id:id},
-    success:function(data){
-    console.log(data);
-    console.log('sucess');
-    showData();
+    success:function(){
+      showData();
+      swal({
+        title: "Task Deleted Successfully",
+        icon: "success",
+        button: "OK",
+        timer: 1500,
+      });
+    
     },
     error:function(){
-      console.log('error');
+     
     }
 
 
@@ -141,13 +159,24 @@ function saveTask(){
       radio: $("input[name='radio']:checked").val(),
       date: $('#datepicker').val(),
   },
-  success:function(data){
-      alert(data);
+  success:function(task){
+    swal({
+      title: task,
+      text: "Task Added Successfully",
+      icon: "success",
+      button: "OK",
+      timer: 1500,
+    });
       showData();
       
   },
   error:function(){
-   alert('Something went Wrong');
+    swal({
+      title: "Something Went Wrong",
+      text: "Try Again Later",
+      icon: "error",
+      button: "OK",
+    });
    
 
   },
@@ -187,12 +216,25 @@ function updateTask(id){
     date: $('#datepicker1').val(),
 },
 success:function(data){
-    alert(data);
+  $('#exampleModalCenter').modal('hide');
+  swal({
+    title: data,
+    text: "Task Updated Successfully",
+    icon: "success",
+    button: "OK",
+    timer: 1500,
+  });
     showData();
     
 },
 error:function(){
- alert('Something went Wrong');
+  $('#exampleModalCenter').modal('hide');
+  swal({
+    title: "Something Went Wrong",
+    text: "Try Again Later",
+    icon: "error",
+    button: "OK",
+  });
  
 
 },

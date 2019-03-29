@@ -151,7 +151,7 @@
                       <div class="card-body ">
                           <h5 class="card-title text-center">TASK 1</h5>
                       </div>
-                      <ul class="list-group list-group-flush" id="task1">
+                      <ul class="list-group list-group-flush" id="task1" data-toggle="tooltip" title="Double click to update">
                              <!-- here goes the task details -->
                              
                                     
@@ -170,7 +170,7 @@
                           <div class="card-body">
                               <h5 class="card-title text-center">TASK 2</h5>
                           </div>
-                          <ul class="list-group list-group-flush" id="task2">
+                          <ul class="list-group list-group-flush" id="task2" data-toggle="tooltip" title="Double click to update">
                                
                           </ul>
                     </div>
@@ -185,7 +185,7 @@
                           <div class="card-body ">
                               <h5 class="card-title text-center">TASK 3</h5>
                           </div>
-                          <ul class="list-group list-group-flush" id="task3">
+                          <ul class="list-group list-group-flush" id="task3" data-toggle="tooltip" title="Double click to update">
                                                    
                       </div>
           </div>
@@ -196,7 +196,7 @@
                       <div class="card-body ">
                           <h5 class="card-title text-center">TASK 4</h5>
                       </div>
-                        <ul class="list-group list-group-flush" id="task4">
+                        <ul class="list-group list-group-flush" id="task4" data-toggle="tooltip" title="Double click to update">
                              
                       </ul>
                   </div>
@@ -211,6 +211,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="script.js"> </script>
 </body>
 </html>
