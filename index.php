@@ -14,14 +14,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" /> 
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
 <body>
           <div class="jumbotron jumbotron-fluid">
             <div class="container">
-              <h3 class="display-5 text-center ">TO DO LIST</h3>
+              <h1 class="display-5 text-center textMove font-effect-shadow-multiple text-bold">DooooZ</h1>
               <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
             </div>
+            
+            <div class="container cssContainer">
+                <input type="text" placeholder="Search...">
+                <div class="search"></div>
+             </div>
           </div>
 
  <!-- ************************************************************************************************************************************************ -->

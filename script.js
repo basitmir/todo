@@ -116,7 +116,12 @@ function showData(){
       
     },
     error:function(){
-      console.log('error');
+      swal({
+        title: "Something Went Wrong",
+        text: "Try Again Later",
+        icon: "error",
+        button: "OK",
+      });
     }
 
 
@@ -141,6 +146,12 @@ function deleteTask(id){
     
     },
     error:function(){
+      swal({
+        title: "Something Went Wrong",
+        text: "Try Again Later",
+        icon: "error",
+        button: "OK",
+      });
      
     }
 
