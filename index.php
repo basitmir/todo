@@ -27,8 +27,9 @@
             <div class="container cssContainer">
                 <input type="text" placeholder="Search...">
                 <div class="search"></div>
-             </div>
+             </div> 
           </div>
+          
 
  <!-- ************************************************************************************************************************************************ -->
 <!-- modal start -->
