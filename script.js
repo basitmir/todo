@@ -9,6 +9,11 @@ $(function() {
 
 //ajax calls
 $(document).ready(function(){ 
+
+  $('#search').click(function(){
+    $('#search').val('');
+  });
+
   $('[data-toggle="tooltip"]').tooltip(); 
     
 showData();

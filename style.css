@@ -5,6 +5,7 @@ body{
 .jumbotron {
   padding:40px;
 }
+
 .textMove{
   font-size:60px;
 }
@@ -21,7 +22,7 @@ body{
 }
 .bg-secondary{
     /* background-color: #666633 !important; */
-    background-image: linear-gradient(#888844, #d4d4aa);
+    background-image: linear-gradient(#666633, #d4d4aa);
 }
 .list-group-item, .list-group-item:hover{ z-index: auto; }
 .list-group{
@@ -70,7 +71,9 @@ body{
     }
   }
   @media (max-width: 569px) { 
-      
+    .radioLabel{
+      font-size: 15px;
+    }
   #first{
       padding-bottom: 35px !important;
   }
@@ -79,6 +82,7 @@ body{
 }
     .cssContainer {
       bottom: 420px !important;
+      height: 230px !important;
     }
     .textMove{
       padding-bottom: 22px;
@@ -93,13 +97,13 @@ body{
 
 .cssContainer {
   position: absolute;
-  margin: auto;
+  /* margin: auto; */
   top: 0;
   left: 0;
   right: 0;
   bottom: 370px;
   width: 300px;
-  height: 100px;
+  height: 270px;
 }
 .cssContainer .search {
   position: absolute;
@@ -110,7 +114,7 @@ body{
   left: 0;
   width: 50px;
   height: 50px;
-  background: crimson;
+  background: #dc3545;
   border-radius: 50%;
   transition: all 1s;
   z-index: 4;
@@ -159,12 +163,12 @@ body{
   height: 50px;
   outline: none;
   border: none;
-  background: crimson;
+  background: #dc3545;
   color: white;
-  text-shadow: 0 0 10px crimson;
+  text-shadow: 0 0 10px #dc3545;
   padding: 0 80px 0 20px;
   border-radius: 30px;
-  box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px 0 #dc3545, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
   transition: all 1s;
   opacity: 0;
   z-index: 5;
@@ -181,7 +185,7 @@ body{
 }
 .cssContainer input:focus ~ .search {
   right: -250px;
-  background: #151515;
+  background: #666633;
   z-index: 6;
 }
 .cssContainer input:focus ~ .search::before {

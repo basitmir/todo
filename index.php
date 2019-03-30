@@ -26,7 +26,7 @@
             </div>
             
             <div class="container cssContainer" >
-                <input type="text" placeholder="Search..." id="search">
+                <input type="text" placeholder="Search..." id="search" autocomplete="off">
                 <div class="search"></div>
              </div> 
           </div>
@@ -122,19 +122,19 @@
                                       <div class="col-12">
                                                     <div class="form-check form-check-inline">
                                                           <input class="form-check-input" type="radio" name="radio" id="inlineRadio1" value="1">
-                                                          <label class="form-check-label" for="inlineRadio1">Task 1</label>
+                                                          <label class="form-check-label radioLabel" for="inlineRadio1">Task 1</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
                                                       <input class="form-check-input" type="radio" name="radio" id="inlineRadio2" value="2">
-                                                      <label class="form-check-label" for="inlineRadio2">Task 2</label>
+                                                      <label class="form-check-label radioLabel" for="inlineRadio2">Task 2</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
                                                       <input class="form-check-input" type="radio" name="radio" id="inlineRadio3" value="3">
-                                                      <label class="form-check-label" for="inlineRadio3">Task 3</label>
+                                                      <label class="form-check-label radioLabel" for="inlineRadio3">Task 3</label>
                                                     </div>
                                                     <div class="form-check form-check-inline">
                                                       <input class="form-check-input" type="radio" name="radio" id="inlineRadio4" value="4">
-                                                      <label class="form-check-label" for="inlineRadio4">Task 4</label>
+                                                      <label class="form-check-label radioLabel" for="inlineRadio4">Task 4</label>
                                                     </div>
                                     </div>
                                       <!-- submit -->
