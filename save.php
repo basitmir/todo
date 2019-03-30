@@ -84,6 +84,23 @@ require "config.php";
         echo $sql. "<br>". $error->getMessage();
     }
 }break;
+
+case 'search':{
+    $search= $_POST['search'];
+    if(!empty($search)){
+    try {
+        $connection=new PDO($dsn, $username, $password, $options);
+        $sql="SELECT  * from test where task LIKE '$search%'";
+        $statment=$connection->prepare($sql);
+        $statment->execute();
+        $result=$statment->fetchAll();
+        echo json_encode($result);
+    } catch (PDOException $error) {
+        echo "in the error";
+        echo $sql. "<br>". $error->getMessage();
+    }
+ }//if close
+}break;
    
 } //switch close
 

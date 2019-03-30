@@ -24,8 +24,8 @@
               <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
             </div>
             
-            <div class="container cssContainer">
-                <input type="text" placeholder="Search...">
+            <div class="container cssContainer" >
+                <input type="text" placeholder="Search..." id="search">
                 <div class="search"></div>
              </div> 
           </div>

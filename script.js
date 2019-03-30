@@ -20,6 +20,18 @@ $('#getTaskData').submit(function(event){
         saveTask();  
  });//submit close
 
+ $('#search').keyup(function(){
+  var search = $('#search').val();
+  if(search){
+        searchTask();
+    
+  }
+  else{
+    showData();
+  }
+   
+ });//search close
+
 //delete task
 $(document).on('click','.btnclk',function(){
   var id =$(this).attr('id');
@@ -250,4 +262,77 @@ error:function(){
 
 },
 });
+}
+
+function searchTask(){
+  var search = $('#search').val();
+  $.ajax({
+    url: 'save.php?action=search',
+    type: 'POST',
+    dataType: 'JSON',
+    data:{
+    search: search,
+},
+success:function(data){
+  if(data.length>0){
+  $('#task1,#task2,#task3,#task4').empty();
+   for(var i=0; i<data.length ; i++){
+     if(data[i].position==1){
+       $('#task1').append(
+         '<li class="list-group-item bg-secondary border-0" data-toggle="modal" id="modal">'+data[i].task+' '+
+               '<button type="button" class="btn btn-primary btn-sm btn-danger float-right btnclk" id="'+data[i].id+'">'+
+                 'DELETE'+
+               '</button><br>'+
+             '<small class="text-center text-muted">'+data[i].dueTask+'</small>'+
+          '</li>'
+                         );
+       {/* append close */}
+     }
+
+       if(data[i].position==2){
+         $('#task2').append(
+           '<li class="list-group-item bg-secondary border-0" data-toggle="modal" id="modal">'+data[i].task+' '+
+                 '<button type="button" class="btn btn-primary btn-sm btn-danger float-right  btnclk" id="'+data[i].id+'">'+
+                   'DELETE'+
+                 '</button><br>'+
+               '<small class="text-center text-muted">'+data[i].dueTask+'</small>'+
+            '</li>'
+                           );
+         {/* append close */}
+     }
+
+     if(data[i].position==3){
+       $('#task3').append(
+         '<li class="list-group-item bg-secondary border-0" data-toggle="modal" id="modal">'+data[i].task+' '+
+               '<button type="button" class="btn btn-primary btn-sm btn-danger float-right  btnclk" id="'+data[i].id+'">'+
+                 'DELETE'+
+               '</button><br>'+
+             '<small class="text-center text-muted">'+data[i].dueTask+'</small>'+
+          '</li>'
+                         );
+       {/* append close */}
+   }
+
+   if(data[i].position==4){
+     $('#task4').append(
+       '<li class="list-group-item bg-secondary border-0" data-toggle="modal" id="modal">'+data[i].task+' '+
+             '<button type="button" class="btn btn-primary btn-sm btn-danger float-right  btnclk" id="'+data[i].id+'">'+
+               'DELETE'+
+             '</button><br>'+
+           '<small class="text-center text-muted">'+data[i].dueTask+'</small>'+
+        '</li>'
+                       );
+     {/* append close */}
+ }
+      
+   }
+   // for close
+  }//if close
+  
+
+   
+ },
+
+});
+  
 }
