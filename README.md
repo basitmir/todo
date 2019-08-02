@@ -1,6 +1,6 @@
 <h1>DoooZ</h1>
  <div align="center">
- <h3>[Watch the video]</h3>
+ <h3>[Watch the demo]</h3>
   <a href="https://www.youtube.com/embed/UrLIcJPJxSc"><img src="screenshot.png" height="100"></a>
 </div>
 
