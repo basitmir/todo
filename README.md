@@ -1,7 +1,7 @@
 <h1>DoooZ</h1>
  <div align="center">
  <h3>[Watch the demo]</h3>
-  <a href="https://www.youtube.com/embed/UrLIcJPJxSc"><img src="screenshot.png" height="100"></a>
+  <a href="https://www.youtube.com/embed/UrLIcJPJxSc"><img src="screenshot.png"  height="270" width="480"></a>
 </div>
 
 <h4>Single Page Application</h4>
